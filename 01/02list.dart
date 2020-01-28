@@ -7,6 +7,11 @@ main() {
       {"name": "Lucy", "age": 20},
       {"name": "Bob", "age": 26}
     ];
+    /*    
+      判断是否为空 isEmpty() 为空返回true
+      获取列表长度 length
+      数组翻转 reverse()
+     */
     /* add() 添加一个元素到List末尾
       students.add({"name": "张三", "age": 28}); 
     */
@@ -83,6 +88,45 @@ main() {
           return item["age"] > 20;
         });
        */
-        
-        print(students);
+        /* 
+          join: 将数组链接为一个字符串
+          print(students.join("-"));
+
+          split:将字符串按照某个字符切割为数组
+          var str = students.join("-");
+          print(students.join("-").split("-"));
+        */
+        /* var str = students.join("-");
+        print(students.join("-").split("-")); */
+
+        /* List aaa = [11,22,22,22,33];
+        var bbb = new Set();
+        bbb.addAll(aaa);
+        print(bbb is List);
+        print(bbb.toList()); */
+        /* 
+          where 筛选列表
+          var newList = students.where((item){
+            return item['age'] > 20;
+          });
+         print(newList);
+         */
+        /* 
+          forEach: for的语法糖
+          遍历数组,对象，set类型的数据
+           Map person = {
+        "name": "张三",
+        "age": 19
+      };
+      var newArr = person.forEach((key,value){
+        print("$key--$value");
+      });
+         */
+      Map person = {
+        "name": "张三",
+        "age": 19
+      };
+      var newArr = person.forEach((key,value){
+        print("$key--$value");
+      });
 }
