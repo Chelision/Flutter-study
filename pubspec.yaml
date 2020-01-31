@@ -1,0 +1,5 @@
+name: xxx
+description: xxx
+despendencies:
+    http: ^0.12.0+2
+    date: _format:^1.0.6
