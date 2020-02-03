@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; //引入flutter库
+/* import 'package:flutter/material.dart'; //引入flutter库
 
 class MyApp extends StatelessWidget {
   @override
@@ -37,5 +37,28 @@ class MyApp2 extends StatelessWidget {
 class Textstyle {}
 
 void main() {
+  runApp(MyApp());
+} */
+import 'package:flutter/material.dart';
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        //appBar是顶部导航
+        appBar:AppBar(
+          title: Text("我是顶部导航")
+        ),
+        body:Center(
+          child: Text("我是文档内容"),
+        )
+      ),
+      
+    );
+  }
+}
+
+void main(){
+  //runApp是flutter提供的入口方法
   runApp(MyApp());
 }
