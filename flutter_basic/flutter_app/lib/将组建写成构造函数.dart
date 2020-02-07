@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget{
         body:Container(
           child: Container(
             // child:Image.asset("images/3.jpeg")
-            child:HomePage()
+            child:HomeConent(Icons.search,color:Colors.blue,size:32)
           ),
         )
       ),
@@ -21,33 +21,22 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int num = 0;
+class HomeConent extends StatelessWidget{
+  IconData icon;
+  double size = 32;
+  Color color = Colors.red;
+  HomeConent(this.icon,{this.color,this.size});
   @override
   Widget build(BuildContext context) {
     return Container(
-       child: ListView(
-         children: <Widget>[
-           Text("我是${this.num}"),
-           RaisedButton(
-             child: Text("我是button"),
-             onPressed: (){
-               setState(() {//只有有状态组件里面才会有setState方法
-                 this.num++;
-               });
-             },
-           )
-         ],
-       ),
+      child: Icon(
+        this.icon,
+        color: this.color,
+        size: this.size
+      ),
     );
   }
+
 }
 void main(){
   //runApp是flutter提供的入口方法

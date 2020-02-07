@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget{
         body:Container(
           child: Container(
             // child:Image.asset("images/3.jpeg")
-            child:HomePage()
+            child:HomeConent()
           ),
         )
       ),
@@ -21,31 +21,21 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int num = 0;
+class HomeConent extends StatelessWidget{
+ /*  IconData icon;
+  double size = 32;
+  Color color = Colors.red;
+  HomeConent(this.icon,{this.color,this.size}); */
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: ListView(
-         children: <Widget>[
-           Text("我是${this.num}"),
-           RaisedButton(
-             child: Text("我是button"),
-             onPressed: (){
-               setState(() {//只有有状态组件里面才会有setState方法
-                 this.num++;
-               });
-             },
-           )
-         ],
-       ),
+    return Center(
+      child: Container(
+        width: 200,
+        color: Colors.blue,
+        child: AspectRatio(
+          aspectRatio:3.0/1.0
+        ),
+      ),
     );
   }
 }

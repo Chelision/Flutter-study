@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget{
         body:Container(
           child: Container(
             // child:Image.asset("images/3.jpeg")
-            child:HomePage()
+            child:HomeConent()
           ),
         )
       ),
@@ -21,31 +21,28 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int num = 0;
+class HomeConent extends StatelessWidget{
+  List myList = [1,2,3,4,5,6,7,8,9,11110];
   @override
   Widget build(BuildContext context) {
     return Container(
-       child: ListView(
-         children: <Widget>[
-           Text("我是${this.num}"),
-           RaisedButton(
-             child: Text("我是button"),
-             onPressed: (){
-               setState(() {//只有有状态组件里面才会有setState方法
-                 this.num++;
-               });
-             },
-           )
-         ],
-       ),
+      height: 320,
+      width: 300,
+      color: Colors.red,
+      // color: Colors.red,
+      child: Wrap(
+        spacing: 10,
+        runSpacing: 10,
+        alignment: WrapAlignment.spaceAround,//定义排列的方式，与flex类似
+        children: myList.map((value){
+          return Container(
+            // width: 50,
+            height: 50,
+            color: Colors.blue,
+            child: Text("我是$value"),
+          );
+        }).toList()
+      ),
     );
   }
 }
