@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'pages/RouterPage1.dart';
+import 'pages/RouterPage2.dart';
 import 'pages/HomePage.dart';
 import 'pages/MenuPage.dart';
 import 'pages/TypePage.dart';
@@ -33,9 +34,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title:Text("我是顶部导航")
         ),
-        body: Container(
-          child: this.Routes[myIndex],
-        ),
+        body: BodyPage(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: this.myIndex,
           items: [
@@ -60,6 +59,49 @@ class _HomePageState extends State<HomePage> {
           fixedColor: Colors.yellow,
         ),
       );
+  }
+}
+class BodyPage extends StatefulWidget {
+  BodyPage({Key key}) : super(key: key);
+
+  @override
+  _BodyPageState createState() => _BodyPageState();
+}
+
+class _BodyPageState extends State<BodyPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+       child: Column(
+         mainAxisAlignment:MainAxisAlignment.center,
+         children: <Widget>[
+           RaisedButton(
+             onPressed: (){
+               //路由页面跳转
+               Navigator.of(context).push(
+                 MaterialPageRoute(
+                   builder: (context)=> Router1Page()
+                 )
+               );
+             },
+             child: Text("点击跳转到页面一"),
+             color: Colors.blue,
+           ),
+           RaisedButton(
+             onPressed: (){
+              Navigator.of(context).push(
+                 MaterialPageRoute(
+                   //跳转传值
+                   builder: (context)=> Router2Page("李四")
+                 )
+               );
+             },
+             child: Text("点击跳转到页面二"),
+             color: Colors.blue,
+           )
+         ],
+       ),
+    );
   }
 }
 void main(){
