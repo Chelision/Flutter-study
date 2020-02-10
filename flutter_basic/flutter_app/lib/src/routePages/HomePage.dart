@@ -2,14 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
-
+  int myIndex = 0;
+  HomePage({Key key,this.myIndex=0}) : super(key: key);
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState(this.myIndex);
 }
 
 class _HomePageState extends State<HomePage> {
-  int myIndex = 0;
+  int myIndex;
+  _HomePageState(this.myIndex);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

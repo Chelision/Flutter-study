@@ -15,6 +15,17 @@ class _UserResgiterState extends State<UserResgiter> {
       appBar: AppBar(
         title: Text("我是UserRegisterPage"),
       ),
+      body: Container(
+        child: Center(
+          child: RaisedButton(
+            child: Text("点我进行注册"),
+            onPressed: (){
+              Navigator.of(context).pushReplacementNamed("/UserRegisterSecond");
+              /* Navigator.pushNamed(context, "/UserRegisterSecond"); */
+            },
+          ),
+        ),
+      ),
     );
   }
 }

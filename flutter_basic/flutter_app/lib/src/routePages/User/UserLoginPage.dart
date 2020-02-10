@@ -18,7 +18,7 @@ class _UserLoginState extends State<UserLogin> {
       body: Container(
         child: Center(
           child: RaisedButton(
-            child: Text("点我进行注册"),
+            child: Text("点我进行登录"),
             onPressed: (){
               Navigator.pop(context);
             },

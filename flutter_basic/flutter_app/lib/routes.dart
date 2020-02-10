@@ -7,6 +7,8 @@ import 'src/routePages/EditPage.dart';
 import 'src/routePages/User/UserLoginPage.dart';
 import 'src/routePages/User/UserRegisterPage.dart';
 import 'src/routePages/HomePage.dart';
+import 'src/routePages/User/UserRegisterSecond.dart';
+import 'src/routePages/User/UserRegisterThird.dart';
 
 import 'src/routePages/Page1.dart';
 import 'src/routePages/Page2.dart';
@@ -21,6 +23,8 @@ final routes =  {
         '/page3':(context,{arguments}) => Page3(arguments:arguments),
         '/UserLogin':(context)=> UserLogin(),
         '/UserRegister':(context)=> UserResgiter(),
+        '/UserRegisterSecond':(context)=>UserRegisterSecond(),
+        '/UserRegisterThird':(context)=>UserRegisterThird()
       };
 
 Function onGenerateRoute = (RouteSettings settings){
