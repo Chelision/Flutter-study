@@ -94,7 +94,7 @@ class _BodyPageState extends State<BodyPage> {
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// import 'src/components/HomePage.dart';
+import 'src/routePages/HomePage.dart';
 import 'routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -102,8 +102,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',//表示初始化的时候加载的路由
-      // home: HomePage(),
+      home: HomePage(),
       //监听此处的路由，来进行路由传值处理;
       onGenerateRoute: onGenerateRoute
     );

@@ -1,17 +1,19 @@
-/* 
 import 'package:flutter/material.dart';
-import 'src/routes.dart';
+import 'pages/RouterPage1.dart';
+import 'pages/RouterPage2.dart';
+import 'pages/HomePage.dart';
+import 'pages/MenuPage.dart';
+import 'pages/TypePage.dart';
 class MyApp extends StatelessWidget{
-  var myRoutes= routes;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
-      routes: routes,
+      home: HomePage()
     );
   }
-}
 
+  void setState(Null Function() param0) {}
+}
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -19,8 +21,12 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-//内容区
 class _HomePageState extends State<HomePage> {
+  var Routes = [
+    Home(),
+    Menu(),
+    Type()
+  ];
   int myIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -71,14 +77,24 @@ class _BodyPageState extends State<BodyPage> {
          children: <Widget>[
            RaisedButton(
              onPressed: (){
-               Navigator.pushNamed(context, '/page1');
+               //路由页面跳转
+               Navigator.of(context).push(
+                 MaterialPageRoute(
+                   builder: (context)=> Router1Page()
+                 )
+               );
              },
              child: Text("点击跳转到页面一"),
              color: Colors.blue,
            ),
            RaisedButton(
              onPressed: (){
-              Navigator.pushNamed(context, '/page2');
+              Navigator.of(context).push(
+                 MaterialPageRoute(
+                   //跳转传值
+                   builder: (context)=> Router2Page("李四")
+                 )
+               );
              },
              child: Text("点击跳转到页面二"),
              color: Colors.blue,
@@ -88,35 +104,7 @@ class _BodyPageState extends State<BodyPage> {
     );
   }
 }
- */
-
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-// import 'src/components/HomePage.dart';
-import 'routes.dart';
-
-class MyApp extends StatelessWidget {
-  
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: '/',//表示初始化的时候加载的路由
-      // home: HomePage(),
-      //监听此处的路由，来进行路由传值处理;
-      onGenerateRoute: onGenerateRoute
-    );
-  }
-}
-
-
-
-
-
-//主函数
 void main(){
   //runApp是flutter提供的入口方法
   runApp(MyApp());
 }
-
