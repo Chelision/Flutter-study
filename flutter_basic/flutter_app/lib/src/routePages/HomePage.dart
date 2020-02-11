@@ -51,6 +51,12 @@ class _HomePageState extends State<HomePage> {
               onPressed: (){
                 Navigator.pushNamed(context, '/page2',arguments: {"id":"121212"});
               },
+            ),
+            RaisedButton(
+              child: Text("点击跳转到AppBar"),
+              onPressed: (){
+                Navigator.pushNamed(context, '/AppBarComponent');
+              },
             )
           ],
         ),

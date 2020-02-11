@@ -13,6 +13,7 @@ import 'src/routePages/User/UserRegisterThird.dart';
 import 'src/routePages/Page1.dart';
 import 'src/routePages/Page2.dart';
 import 'src/routePages/Page3.dart';
+import 'src/components/AppBarComponents.dart';
 
 final routes =  {
         '/': (context)=> HomePage(),
@@ -24,7 +25,8 @@ final routes =  {
         '/UserLogin':(context)=> UserLogin(),
         '/UserRegister':(context)=> UserResgiter(),
         '/UserRegisterSecond':(context)=>UserRegisterSecond(),
-        '/UserRegisterThird':(context)=>UserRegisterThird()
+        '/UserRegisterThird':(context)=>UserRegisterThird(),
+        '/AppBarComponent': (context)=>AppBarComponents()
       };
 
 Function onGenerateRoute = (RouteSettings settings){
