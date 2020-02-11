@@ -16,6 +16,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("我是主页面导航"),
+        backgroundColor: Colors.red,
+        // leading: Icon(Icons.menu),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: (){
+            print("aaa");
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){
+              print("你点击了搜索图标");
+            },
+          )
+        ],
+        centerTitle: true,//设置标题是否居中显示
       ),
       body: Container(
         child: Column(

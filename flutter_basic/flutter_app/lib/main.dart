@@ -102,6 +102,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //配置debug的logo是否显示
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',//表示初始化的时候加载的路由
       // home: HomePage(),
       //监听此处的路由，来进行路由传值处理;
